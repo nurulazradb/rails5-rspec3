@@ -1,3 +1,4 @@
+# coding: utf-8
 require_relative '../../../../lib/wordpress/comments/client'
 
 RSpec.describe Wordpress::Comments::Client do
@@ -21,6 +22,12 @@ RSpec.describe Wordpress::Comments::Client do
       link = 'http://feeds.mashable.com/~r/mashable/tech/~3/H19a27DsGe8/'
 
       expect(comment[:link]).to eq link
+    end
+
+    it "extracts the title" do
+      title = "What a Snapchat phone could look like"
+
+      expect(comment[:title]).to eq title
     end
 
   end
