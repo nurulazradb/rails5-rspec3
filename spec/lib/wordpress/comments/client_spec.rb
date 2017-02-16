@@ -4,6 +4,7 @@ require_relative '../../../support/match_date'
 
 RSpec.describe Wordpress::Comments::Client do
   let (:client) { Wordpress::Comments::Client.new 'http://feeds.mashable.com/mashable/tech' }
+  let(:xml) { File.read(File.join('spec', 'fixtures', 'files', 'feed.xml'))}
 
   describe "#initialize" do
 
@@ -15,7 +16,6 @@ RSpec.describe Wordpress::Comments::Client do
 
   describe "#parse" do
 
-    let(:xml) { File.read(File.join('spec', 'fixtures', 'files', 'feed.xml'))}
     let (:comments) { client.parse xml }
     let (:comment) { comments.first }
 
@@ -50,6 +50,11 @@ RSpec.describe Wordpress::Comments::Client do
   describe "#fetch" do
 
     let(:comments) { client.fetch }
+
+    before(:each) do
+      # using stub
+      allow(client).to receive(:get) { xml }
+    end
 
     it "build comment objects" do
       expect(comments.length).to eq 10
