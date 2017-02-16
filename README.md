@@ -16,3 +16,6 @@
 * Stubs & Mocks
 * Context
 
+### Rails 5
+
+* Request Spec
