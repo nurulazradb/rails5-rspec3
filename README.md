@@ -6,3 +6,13 @@
 * Parse XML
 * Red, Green, Refactor
 * Unicode
+
+### The Tools
+
+* API Discovery
+* Custom Matcher
+* Configuration Options
+* Retrieve Data
+* Stubs & Mocks
+* Context
+
