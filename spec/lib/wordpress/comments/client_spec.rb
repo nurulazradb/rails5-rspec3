@@ -1,5 +1,6 @@
 # coding: utf-8
 require_relative '../../../../lib/wordpress/comments/client'
+require_relative '../../../support/match_date'
 
 RSpec.describe Wordpress::Comments::Client do
   let (:client) { Wordpress::Comments::Client.new 'http://feeds.mashable.com/mashable/tech' }
@@ -32,6 +33,16 @@ RSpec.describe Wordpress::Comments::Client do
 
     it "extracts the name of the commenter" do
       expect(comment[:commenter]).to eq 'Louise Matsakis'
+    end
+
+    it "extracts the date" do
+      # Wed, 15 Feb 2017 02:28:34 +0000
+      expect(comment[:date].year).to eq 2017
+    end
+
+    it "extracts the date (redux)" do
+      # Wed, 15 Feb 2017 02:28:34 +0000
+      expect(comment[:date]).to match_date '2017-02-15'
     end
 
   end
