@@ -51,13 +51,38 @@ RSpec.describe Wordpress::Comments::Client do
 
     let(:comments) { client.fetch }
 
-    before(:each) do
-      # using stub
-      allow(client).to receive(:get) { xml }
+    context "success" do
+
+      before(:each) do
+        # using stub
+        allow(client).to receive(:get) { xml }
+      end
+
+      it "build comment objects" do
+        expect(comments.length).to eq 10
+      end
+
     end
 
-    it "build comment objects" do
-      expect(comments.length).to eq 10
+    context "bad URL" do
+
+      let (:client) { Wordpress::Comments::Client.new 'not a URL' }
+
+      it "raises error" do
+        expect{ client.fetch }.to raise_error(Errno::ENOENT)
+      end
+
+    end
+
+    context "bad XML" do
+
+      before(:each) do
+        allow(client).to receive(:get) { "BAD XML!" }
+      end
+
+      it "raise error from Nokogiri" do
+        expect { client.fetch }.to raise_error(Nokogiri::XML::SyntaxError)
+      end
     end
 
   end
