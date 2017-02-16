@@ -19,3 +19,5 @@
 ### Rails 5
 
 * Request Spec
+* Refactor
+
