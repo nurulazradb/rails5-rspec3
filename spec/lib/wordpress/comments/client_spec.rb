@@ -30,6 +30,10 @@ RSpec.describe Wordpress::Comments::Client do
       expect(comment[:title]).to eq title
     end
 
+    it "extracts the name of the commenter" do
+      expect(comment[:commenter]).to eq 'Louise Matsakis'
+    end
+
   end
 
 end
