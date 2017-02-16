@@ -47,4 +47,14 @@ RSpec.describe Wordpress::Comments::Client do
 
   end
 
+  describe "#fetch" do
+
+    let(:comments) { client.fetch }
+
+    it "build comment objects" do
+      expect(comments.length).to eq 10
+    end
+
+  end
+
 end
