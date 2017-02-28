@@ -47,4 +47,26 @@ RSpec.describe "Home Page" do
 
     end
   end
+
+  describe "POST /blogs" do
+
+    before :each do
+      stub_network
+
+      visit "/"
+      fill_in "Blog title", with: "Example"
+      fill_in "Comments feed url", with: "http://feed.example.com/comments"
+      click_on "Create"
+    end
+
+    let(:blog) { Blog.find_by_permalink 'example' }
+
+    it "creates a valid record" do
+      expect(blog).to be_valid
+    end
+
+    it "preloads comments" do
+      expect(blog.comments.length).to eq(10)
+    end
+  end
 end

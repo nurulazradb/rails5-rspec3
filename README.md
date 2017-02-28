@@ -39,3 +39,4 @@
 * Home Spec, Redu
 * Save and Open Page
 * Display a Blog Record
+* New Blog Form

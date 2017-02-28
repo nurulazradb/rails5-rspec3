@@ -1,6 +1,7 @@
 <h3>Track a new blog</h3>
+<%= render 'form' %>
 <ul>
   <% recent_blogs.each do |blog| %>
     <li><%= link_to blog.title, blog_path(blog) %></li>
-  <% end %>  
+  <% end %>
 </ul>
