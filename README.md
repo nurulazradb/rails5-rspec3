@@ -24,3 +24,6 @@
 * Big Steps, Small Step
 * Guard Spec Runner
 
+### Rails Model
+
+* Blog Model
