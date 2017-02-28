@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Blog do
 
-  let(:blog) { Blog.new(title: 'My Blog', comments_feed_url: 'http://feeds.mashable.com/mashable/tech') }
+  let(:blog) { Blog.new(Factory.blog_attributes) }
 
   describe  "attributes" do
 

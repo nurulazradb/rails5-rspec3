@@ -35,4 +35,5 @@
 ### Rails Wrap Up
 
 * Stub the Network
+* A Factory Using Ruby
 
