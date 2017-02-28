@@ -4,6 +4,8 @@ class Blog < ApplicationRecord
 
   before_validation :build_permalink, on: :create
 
+  scope :recent, -> { order(:created_at).reverse_order.limit(10) }
+
   has_many :comments do
 
     def refresh

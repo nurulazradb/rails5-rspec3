@@ -36,4 +36,4 @@
 
 * Stub the Network
 * A Factory Using Ruby
-
+* Home Spec, Redux
