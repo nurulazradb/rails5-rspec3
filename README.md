@@ -27,3 +27,4 @@
 ### Rails Model
 
 * Blog Model
+* Shoulda

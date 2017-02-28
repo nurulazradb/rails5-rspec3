@@ -4,10 +4,20 @@ RSpec.describe Blog do
 
   let(:blog) { Blog.new(title: 'My Blog', comments_feed_url: 'http://example.com/comments/feed') }
 
-  it "save attributes" do
-    blog.save!
+  describe  "attributes" do
 
-    expect(blog).to be_valid
+    it { should validate_presence_of   :title }
+    it { should validate_uniqueness_of :title }
+    
+    it { should validate_presence_of   :comments_feed_url }
+    it { should validate_uniqueness_of :comments_feed_url }
+
+    it "save attributes" do
+      blog.save!
+
+      expect(blog).to be_valid
+    end
+
   end
 
 end

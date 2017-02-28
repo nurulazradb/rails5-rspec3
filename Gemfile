@@ -43,6 +43,7 @@ group :development, :test do
   gem 'capybara'
   gem 'guard'
   gem 'guard-rspec'
+  gem 'shoulda-matchers', '~> 3.1'
   gem 'rb-fsevent', '~> 0.9.1'
 end
 
