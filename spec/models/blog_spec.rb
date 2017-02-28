@@ -12,6 +12,8 @@ RSpec.describe Blog do
     it { should validate_presence_of   :comments_feed_url }
     it { should validate_uniqueness_of :comments_feed_url }
 
+    it { should have_many :comments }
+
     it "save attributes" do
       blog.save!
 

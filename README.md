@@ -29,3 +29,4 @@
 * Blog Model
 * Shoulda
 * Permalink
+* Comment Model

@@ -4,6 +4,8 @@ class Blog < ApplicationRecord
 
   before_validation :build_permalink, on: :create
 
+  has_many :comments
+
   def build_permalink
     if self.title
       self.permalink = self.title.parameterize
