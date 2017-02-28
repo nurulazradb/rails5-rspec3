@@ -30,3 +30,4 @@
 * Shoulda
 * Permalink
 * Comment Model
+* Association Methods
