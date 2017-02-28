@@ -31,3 +31,8 @@
 * Permalink
 * Comment Model
 * Association Methods
+
+### Rails Wrap Up
+
+* Stub the Network
+
