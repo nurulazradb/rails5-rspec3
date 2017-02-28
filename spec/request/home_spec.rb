@@ -40,6 +40,8 @@ RSpec.describe "Home Page" do
       end
 
       it "show a list of blogs" do
+        # use save_and_open_page if you want to inspect the rendered page
+        # save_and_open_page
         expect(page).to have_selector 'li a', text: 'Mashable'
       end
 

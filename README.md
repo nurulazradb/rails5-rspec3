@@ -36,4 +36,5 @@
 
 * Stub the Network
 * A Factory Using Ruby
-* Home Spec, Redux
+* Home Spec, Redu
+* Save and Open Page

@@ -41,6 +41,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'launchy', '~> 2.4.3'
   gem 'guard'
   gem 'guard-rspec'
   gem 'shoulda-matchers', '~> 3.1'
