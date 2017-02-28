@@ -38,3 +38,4 @@
 * A Factory Using Ruby
 * Home Spec, Redu
 * Save and Open Page
+* Display a Blog Record
