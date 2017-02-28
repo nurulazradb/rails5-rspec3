@@ -28,3 +28,4 @@
 
 * Blog Model
 * Shoulda
+* Permalink
